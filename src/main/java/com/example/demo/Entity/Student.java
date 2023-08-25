@@ -1,10 +1,19 @@
 package com.example.demo.Entity;
 
-public class Student 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity(name = "students")
+public class Student
 {
-	int reg_no;
+	@Id
+	long reg_no;
 	String name;
 	String password;
+	
+	public Student() {
+		
+	}
 	
 	public Student(int reg_no, String name, String password)
 	{
@@ -13,10 +22,10 @@ public class Student
 		this.password = password;
 	}
 	
-	public int getReg_no() {
+	public long getReg_no() {
 		return reg_no;
 	}
-	public void setReg_no(int reg_no) {
+	public void setReg_no(long reg_no) {
 		this.reg_no = reg_no;
 	}
 	public String getName() {
