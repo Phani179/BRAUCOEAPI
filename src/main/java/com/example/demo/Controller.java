@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ public class Controller
 	StudentsData studentsData;
 	
 	@GetMapping("/student/{reg_no}")
-	public Student getSpecificUser(@PathVariable int reg_no) 
+	public Optional<Student> getSpecificUser(@PathVariable int reg_no) 
 	{
 		return studentsData.getStudentData(reg_no);
 	}

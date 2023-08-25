@@ -2,6 +2,7 @@ package com.example.demo.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +16,9 @@ public class StudentsData
 	@Autowired
 	StudentRepo studentRepo;
 	
-	public Student getStudentData(long reg_no)
+	public Optional<Student> getStudentData(long reg_no)
 	{
-		@SuppressWarnings("deprecation")
-		Student student = studentRepo.getById(reg_no);
+		Optional<Student> student = studentRepo.findById(reg_no);
 		if(student == null)
 		{
 			return null;
