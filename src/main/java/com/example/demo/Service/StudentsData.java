@@ -12,17 +12,21 @@ import com.example.demo.Repo.StudentRepo;
 @Service
 public class StudentsData 
 {
-	public List<Student> getStudentData()
-	{
-		List<Student> students =new ArrayList<>();
-		students.add(new Student(2081951044, "Phani", "Phani@7989"));
-		students.add(new Student(2081951034, "Sai", "Sai@1234"));
-		students.add(new Student(2081951014, "Kumar", "Kumar@1234"));
-		return students;
-	}
-	
 	@Autowired
 	StudentRepo studentRepo;
+	
+	public Student getStudentData(long reg_no)
+	{
+		@SuppressWarnings("deprecation")
+		Student student = studentRepo.getById(reg_no);
+		if(student == null)
+		{
+			return null;
+		}
+		else {
+			return student;
+		}
+	}
 	
 	public List<Student> students()
 	{

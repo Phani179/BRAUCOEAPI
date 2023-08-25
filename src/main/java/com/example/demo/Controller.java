@@ -16,23 +16,10 @@ public class Controller
 	@Autowired
 	StudentsData studentsData;
 	
-	@GetMapping("/studentsdata")
-	public List<Student> getUser() {
-		return studentsData.getStudentData();
-	}
-	
-	@GetMapping("/get-student/{reg_no}")
+	@GetMapping("/student/{reg_no}")
 	public Student getSpecificUser(@PathVariable int reg_no) 
 	{
-		List<Student> students = studentsData.getStudentData();
-		for(Student i : students)
-		{
-			if(reg_no == i.getReg_no())
-			{
-				return i;
-			}
-		}
-		return null;
+		return studentsData.getStudentData(reg_no);
 	}
 	
 	@GetMapping("/students")
