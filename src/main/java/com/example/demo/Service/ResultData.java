@@ -1,26 +1,28 @@
 package com.example.demo.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Entity.Results_db;
+import com.example.demo.Entity.Results;
+import com.example.demo.Entity.Students;
 import com.example.demo.Repo.ResultsRepo;
+import com.example.demo.Repo.StudentsRepo;
 
 @Service
 public class ResultData 
 {
 	@Autowired
-	ResultsRepo results;
+	StudentsRepo studentsRepo;
 	
-	public List<Results_db> getResults(long reg_no)
+	@Autowired
+	ResultsRepo resultsRepo;
+	
+	public Students getResult(long reg_no)
 	{
-		List<Results_db> result = new ArrayList<>();
-		System.out.println("Service Called");
-		result = results.findByRegNo(reg_no);
-		System.out.println(result);
-		return result;
+		Results results = resultsRepo.findById(reg_no).get();
+		Students student = studentsRepo.findById(reg_no).get();
+		System.out.println(student.getResults());
+		System.out.println(results);
+		return student;
 	}
 }

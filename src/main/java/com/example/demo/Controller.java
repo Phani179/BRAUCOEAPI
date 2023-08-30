@@ -8,9 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.demo.Entity.Results_db;
 import com.example.demo.Entity.Student;
+import com.example.demo.Entity.Students;
 import com.example.demo.Service.ResultData;
 import com.example.demo.Service.StudentsData;
 
@@ -38,10 +37,8 @@ public class Controller
 	ResultData resultData;
 	
 	@GetMapping("/result/{reg_no}")
-	public List<Results_db> getResult(@PathVariable long reg_no)
+	public Students getResult(@PathVariable long reg_no)
 	{
-		System.out.println("Result Called");
-		List<Results_db> results = resultData.getResults(reg_no);
-		return results;
+		return resultData.getResult(reg_no);
 	}
 }
