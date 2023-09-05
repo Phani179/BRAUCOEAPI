@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.Entity.Student;
 import com.example.demo.Entity.Students;
+import com.example.demo.Service.GenerateOTP;
 import com.example.demo.Service.ResultData;
 import com.example.demo.Service.StudentsData;
 
@@ -36,9 +37,18 @@ public class Controller
 	@Autowired
 	ResultData resultData;
 	
-	@GetMapping("/result/{reg_no}")
+	@GetMapping("/result/Semester - 1/{reg_no}")
 	public Students getResult(@PathVariable long reg_no)
 	{
 		return resultData.getResult(reg_no);
+	}
+	
+	@Autowired
+	GenerateOTP genarateOtp;
+	
+	@GetMapping("/getOTP/{mobileNumber}")
+	public String generateOTP(@PathVariable String mobileNumber)
+	{
+		return genarateOtp.generateOTP("+91"+mobileNumber);
 	}
 }
