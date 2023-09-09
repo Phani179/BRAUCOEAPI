@@ -10,7 +10,7 @@ import com.twilio.Twilio;
 import jakarta.annotation.PostConstruct;
 
 @SpringBootApplication(scanBasePackages = "com")
-public class SpringBootDemoApplication {
+public class BRAUCOEAPI {
 	
 	@Autowired
 	TwilioConfig twilioConfig;
@@ -22,7 +22,7 @@ public class SpringBootDemoApplication {
 	}
 	
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemoApplication.class, args);
+		SpringApplication.run(BRAUCOEAPI.class, args);
 	}
 }
 
