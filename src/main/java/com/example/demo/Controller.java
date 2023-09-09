@@ -7,12 +7,16 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.Entity.Student;
 import com.example.demo.Entity.Students;
 import com.example.demo.Service.GenerateOTP;
 import com.example.demo.Service.ResultData;
+import com.example.demo.Service.SendEmail;
 import com.example.demo.Service.StudentsData;
+import com.example.demo.dto.Email;
 
 @RestController
 public class Controller
@@ -50,5 +54,14 @@ public class Controller
 	public String generateOTP(@PathVariable String mobileNumber)
 	{
 		return genarateOtp.generateOTP("+91"+mobileNumber);
+	}
+	
+	@Autowired
+	SendEmail sendEmail;
+	
+	@PostMapping("/sendMail")
+	public boolean sendMail(@RequestBody Email email) 
+	{
+		return sendEmail.sendEmail(email.getSubject(), email.getMessage());
 	}
 }
