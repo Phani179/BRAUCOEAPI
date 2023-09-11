@@ -3,17 +3,23 @@ package com.example.demo;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Entity.NewPassword;
 import com.example.demo.Entity.StudentDetails;
 import com.example.demo.Service.GenerateOTP;
+import com.example.demo.Service.SendEmail;
 import com.example.demo.Service.StudentDetailsService;
 import com.example.demo.Service.UpdatePassword;
+import com.example.demo.dto.Email;
 
 @RestController
 public class Controller
@@ -43,6 +49,7 @@ public class Controller
 	@PutMapping("/updatePassword/{studentId}")
 	public boolean updatePassword(@PathVariable long studentId,@RequestBody NewPassword newPassword)
 	{
+		System.out.println(studentId);
 		return updatePasswordObj.updatePassword(studentId, newPassword.getNewPassword());
 	}
 	
@@ -72,14 +79,14 @@ public class Controller
 //		return resultData.getResult(reg_no);
 //	}
 	
-//	@Autowired
-//	SendEmail sendEmail;
-//	
-//	@PostMapping(value = "/sendMail", consumes = MediaType.TEXT_PLAIN_VALUE)
-//	public boolean sendMail(@RequestBody Email email) 
-//	{
-//		return sendEmail.sendEmail(email.getSubject(), email.getMessage());
-//	}
+	@Autowired
+	SendEmail sendEmail;
+	
+	@PostMapping(value = "/sendMail")
+	public boolean sendMail(@RequestBody Email email) 
+	{
+		return sendEmail.sendEmail(email.getSubject(), email.getMessage());
+	}
 	
 	
 }

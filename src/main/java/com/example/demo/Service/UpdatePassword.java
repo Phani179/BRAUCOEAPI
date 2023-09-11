@@ -18,6 +18,7 @@ public class UpdatePassword
 	public boolean updatePassword(long studentId,String newPassword)
 	{
 		Optional<StudentPersonalInfo> student = studentPersonalInfoRepo.findById(studentId);
+		System.out.println(student.get());
 		if(!student.isEmpty())
 		{
 			StudentPersonalInfo studentPersonalInfo = student.get();
