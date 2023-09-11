@@ -5,10 +5,15 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.Entity.NewPassword;
 import com.example.demo.Entity.StudentDetails;
 import com.example.demo.Service.GenerateOTP;
 import com.example.demo.Service.StudentDetailsService;
+import com.example.demo.Service.UpdatePassword;
 
 @RestController
 public class Controller
@@ -30,6 +35,15 @@ public class Controller
 	public List<Optional<StudentDetails>> getStudent(@PathVariable long student_id)
 	{
 		return studentDetailsService.getStudent(student_id);
+	}
+	
+	@Autowired
+	UpdatePassword updatePasswordObj;
+	
+	@PutMapping("/updatePassword/{studentId}")
+	public boolean updatePassword(@PathVariable long studentId,@RequestBody NewPassword newPassword)
+	{
+		return updatePasswordObj.updatePassword(studentId, newPassword.getNewPassword());
 	}
 	
 //	@Autowired
