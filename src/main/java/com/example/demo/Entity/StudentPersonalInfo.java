@@ -16,28 +16,28 @@ public class StudentPersonalInfo
 {
 	@Id
 	@Column(name = "Student_Registration_No")
-	long studentRegNo;
+	private long studentRegNo;
 	
 	@Column(name = "Date_Of_Birth")
-	String dateOfBirth;
+	private String dateOfBirth;
 	
 	@Column(name = "Category")
-	String category;
+	private String category;
 	
 	@Column(name = "Fee_Reimbursement_Status")
-	String feeReimbursementStatus;
+	private String feeReimbursementStatus;
 	
 	@Column(name = "Is_Physical_Handicap")
-	String isPhysicalHandicap;
+	private String isPhysicalHandicap;
 	
 	@Column(name = "Permanent_Address")
-	String permanentAddress;
+	private String permanentAddress;
 	
 	@Column(name = "Passport_Size_Photo")
-	String passportSizePhoto;
+	private byte[] passportSizePhoto;
 	
 	@Column(name = "password")
-	String password;
+	private String password;
 	
 
 	public long getStudentRegNo() {
@@ -88,14 +88,6 @@ public class StudentPersonalInfo
 		this.permanentAddress = permanentAddress;
 	}
 
-	public String getPassportSizePhoto() {
-		return passportSizePhoto;
-	}
-
-	public void setPassportSizePhoto(String passportSizePhoto) {
-		this.passportSizePhoto = passportSizePhoto;
-	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -103,4 +95,13 @@ public class StudentPersonalInfo
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public byte[] getPassportSizePhoto() {
+		return passportSizePhoto;
+	}
+
+	public void setPassportSizePhoto(byte[] passportSizePhoto) {
+		this.passportSizePhoto = passportSizePhoto;
+	}
+	
 }

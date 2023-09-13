@@ -8,9 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.StringHttpMessageConverter;
-
+import org.springframework.web.multipart.MultipartResolver;
 import com.twilio.Twilio;
-
 import jakarta.annotation.PostConstruct;
 
 @SpringBootApplication(scanBasePackages = "com")
@@ -25,15 +24,11 @@ public class BRAUCOEAPI {
 		Twilio.init(twilioConfig.getAccount_id(), twilioConfig.getAuth_token());
 	}
 	
-	@Bean
-    public StringHttpMessageConverter stringHttpMessageConverter() {
-        StringHttpMessageConverter converter = new StringHttpMessageConverter(StandardCharsets.UTF_8);
-        return converter;
-    }
 	
 	public static void main(String[] args) {
 		SpringApplication.run(BRAUCOEAPI.class, args);
 	}
+	
 }
 
 
