@@ -59,7 +59,7 @@ public class Controller
 	UploadImageService imageService;
 	
 	@PostMapping("/updateProfileDp/{studentId}")
-	public String uploadImage(@RequestParam("image") MultipartFile multipartFile, @PathVariable Long studentId)
+	public String uploadImage(@RequestParam(value = "image") MultipartFile multipartFile, @PathVariable Long studentId)
 	{
 		return imageService.uploadImage(multipartFile, studentId);
 	}
