@@ -3,6 +3,7 @@ package com.example.demo.Entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,7 @@ public class StudentPersonalInfo
 	@Column(name = "Permanent_Address")
 	private String permanentAddress;
 	
+	@Lob
 	@Column(name = "Passport_Size_Photo")
 	private byte[] passportSizePhoto;
 	
