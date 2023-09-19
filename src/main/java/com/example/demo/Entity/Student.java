@@ -8,9 +8,9 @@ import jakarta.persistence.Id;
 public class Student
 {
 	@Id
-	long reg_no;
-	String name;
-	String password;
+	private long reg_no;
+	private String name;
+	private String password;
 	
 	public Student() {
 		

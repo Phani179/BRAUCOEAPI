@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.example.demo.Entity.NewPassword;
+import com.example.demo.Entity.Semester_1;
 import com.example.demo.Entity.StudentDetails;
 import com.example.demo.Service.GenerateOTP;
+import com.example.demo.Service.Sem1DataService;
 import com.example.demo.Service.SendEmail;
 import com.example.demo.Service.StudentDetailsService;
 import com.example.demo.Service.UpdatePassword;
@@ -26,7 +25,6 @@ import com.example.demo.dto.Email;
 @RestController
 public class Controller
 {
-	
 	@Autowired
 	GenerateOTP genarateOtp;
 	
@@ -64,8 +62,14 @@ public class Controller
 		return imageService.uploadImage(multipartFile, studentId);
 	}
 	
+	@Autowired
+	Sem1DataService sem1Data;
 	
-	
+	@GetMapping("/result/Semester - 1/{reg_no}")
+	public Semester_1 getSem1Results(@PathVariable Long reg_no)
+	{
+		return sem1Data.getSem1Result(reg_no);
+	}
 	
 //	@Autowired
 //	StudentsData studentsData;

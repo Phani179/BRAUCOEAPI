@@ -20,8 +20,14 @@ public class UploadImageService
 		Optional<StudentPersonalInfo> personalInfoObj = personalInfoRepo.findById(studentId);
 		StudentPersonalInfo personalInfo = personalInfoObj.get();
 		try {
-			personalInfo.setPassportSizePhoto(file.getBytes());
-			personalInfoRepo.save(personalInfo);
+			if(personalInfo == null)
+			{
+				return "failed";
+			}
+			else {
+				personalInfo.setPassportSizePhoto(file.getBytes());
+				personalInfoRepo.save(personalInfo);
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			return "Failed";
