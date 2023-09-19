@@ -35,6 +35,33 @@ public class Semester_1
 	private String pap4n;
 	private float pap4gr;
 	
+	private int pap5c;
+	private String pap5n;
+	private float pap5gr;
+	
+	private int pap6c;
+	private String pap6n;
+	private float pap6gr;
+
+	public int getPap6c() {
+		return pap6c;
+	}
+	public void setPap6c(int pap6c) {
+		this.pap6c = pap6c;
+	}
+	public String getPap6n() {
+		return pap6n;
+	}
+	public void setPap6n(String pap6n) {
+		this.pap6n = pap6n;
+	}
+	public float getPap6gr() {
+		return pap6gr;
+	}
+	public void setPap6gr(float pap6gr) {
+		this.pap6gr = pap6gr;
+	}
+	
 	public long getStudent_id() {
 		return student_id;
 	}
@@ -131,7 +158,4 @@ public class Semester_1
 	public void setPap5gr(float pap5gr) {
 		this.pap5gr = pap5gr;
 	}
-	private int pap5c;
-	private String pap5n;
-	private float pap5gr;
 }
