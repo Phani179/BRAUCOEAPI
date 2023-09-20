@@ -108,4 +108,22 @@ public class Controller
 	{
 		return resultsService.getSem5Result(reg_no);
 	}
+	
+	@GetMapping("/result/Semester - 6/{reg_no}")
+	public String getSem6Results(@PathVariable Long reg_no)
+	{
+		return null;
+	}
+	
+	@GetMapping("/result/Semester - 7/{reg_no}")
+	public String getSem7Results(@PathVariable Long reg_no)
+	{
+		return null;
+	}
+	
+	@GetMapping("/result/Semester - 8/{reg_no}")
+	public String getSem8Results(@PathVariable Long reg_no)
+	{
+		return null;
+	}
 }
