@@ -9,7 +9,7 @@ import com.example.demo.Entity.StudentPersonalInfo;
 import com.example.demo.Repo.StudentPersonalInfoRepo;
 
 @Service
-public class UpdatePassword 
+public class UpdatePasswordService 
 {
 	
 	@Autowired

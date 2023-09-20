@@ -10,7 +10,7 @@ import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 
 @Service
-public class GenerateOTP 
+public class OTPService 
 {
 	@Autowired
 	TwilioConfig twilioConfig;

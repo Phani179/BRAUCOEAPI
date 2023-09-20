@@ -13,12 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import com.example.demo.Entity.NewPassword;
 import com.example.demo.Entity.Semester_1;
+import com.example.demo.Entity.Semester_2;
+import com.example.demo.Entity.Semester_3;
+import com.example.demo.Entity.Semester_4;
+import com.example.demo.Entity.Semester_5;
 import com.example.demo.Entity.StudentDetails;
-import com.example.demo.Service.GenerateOTP;
-import com.example.demo.Service.Sem1DataService;
-import com.example.demo.Service.SendEmail;
+import com.example.demo.Service.OTPService;
+import com.example.demo.Service.ResultsService;
+import com.example.demo.Service.EmailService;
 import com.example.demo.Service.StudentDetailsService;
-import com.example.demo.Service.UpdatePassword;
+import com.example.demo.Service.UpdatePasswordService;
 import com.example.demo.Service.UploadImageService;
 import com.example.demo.dto.Email;
 
@@ -26,7 +30,7 @@ import com.example.demo.dto.Email;
 public class Controller
 {
 	@Autowired
-	GenerateOTP genarateOtp;
+	OTPService genarateOtp;
 	
 	@GetMapping("/getOTP/{mobileNumber}")
 	public String generateOTP(@PathVariable String mobileNumber)
@@ -44,7 +48,7 @@ public class Controller
 	}
 	
 	@Autowired
-	UpdatePassword updatePasswordObj;
+	UpdatePasswordService updatePasswordObj;
 	
 	@PutMapping("/updatePassword/{studentId}")
 	public boolean updatePassword(@PathVariable long studentId,@RequestBody NewPassword newPassword)
@@ -62,43 +66,9 @@ public class Controller
 		return imageService.uploadImage(multipartFile, studentId);
 	}
 	
+
 	@Autowired
-	Sem1DataService sem1Data;
-	
-	@GetMapping("/result/Semester - 1/{reg_no}")
-	public Semester_1 getSem1Results(@PathVariable Long reg_no)
-	{
-		return sem1Data.getSem1Result(reg_no);
-	}
-	
-//	@Autowired
-//	StudentsData studentsData;
-//	
-//	@GetMapping("/student/{reg_no}")
-//	public List<Optional<Student>> getSpecificUser(@PathVariable int reg_no) 
-//	{
-//		List<Optional<Student>> student = new ArrayList();
-//		student.add(studentsData.getStudentData(reg_no));
-//		return student;
-//	}
-//	
-//	@GetMapping("/students")
-//	public List<Student> getStudents() 
-//	{
-//		return studentsData.students();
-//	}
-	
-//	@Autowired
-//	ResultData resultData;
-//	
-//	@GetMapping("/result/Semester - 1/{reg_no}")
-//	public Students getResult(@PathVariable long reg_no)
-//	{
-//		return resultData.getResult(reg_no);
-//	}
-	
-	@Autowired
-	SendEmail sendEmail;
+	EmailService sendEmail;
 	
 	@PostMapping(value = "/sendMail")
 	public boolean sendMail(@RequestBody Email email) 
@@ -106,5 +76,36 @@ public class Controller
 		return sendEmail.sendEmail(email.getSubject(), email.getMessage());
 	}
 	
+	@Autowired
+	ResultsService resultsService;
 	
+	@GetMapping("/result/Semester - 1/{reg_no}")
+	public Semester_1 getSem1Results(@PathVariable Long reg_no)
+	{
+		return resultsService.getSem1Result(reg_no);
+	}
+	
+	@GetMapping("/result/Semester - 2/{reg_no}")
+	public Semester_2 getSem2Results(@PathVariable Long reg_no)
+	{
+		return resultsService.getSem2Result(reg_no);
+	}
+	
+	@GetMapping("/result/Semester - 3/{reg_no}")
+	public Semester_3 getSem3Results(@PathVariable Long reg_no)
+	{
+		return resultsService.getSem3Result(reg_no);
+	}
+	
+	@GetMapping("/result/Semester - 4/{reg_no}")
+	public Semester_4 getSem4Results(@PathVariable Long reg_no)
+	{
+		return resultsService.getSem4Result(reg_no);
+	}
+	
+	@GetMapping("/result/Semester - 5/{reg_no}")
+	public Semester_5 getSem5Results(@PathVariable Long reg_no)
+	{
+		return resultsService.getSem5Result(reg_no);
+	}
 }
