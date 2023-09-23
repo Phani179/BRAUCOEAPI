@@ -44,6 +44,7 @@ public class Controller
 	@GetMapping("/student/{student_id}")
 	public List<Optional<StudentDetails>> getStudent(@PathVariable long student_id)
 	{
+		System.out.println(studentDetailsService.getStudent(student_id).get(0).get());
 		return studentDetailsService.getStudent(student_id);
 	}
 	

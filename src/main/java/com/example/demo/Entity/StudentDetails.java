@@ -28,6 +28,9 @@ public class StudentDetails
 	@Column(name = "GENDER")
 	String gender;
 	
+	@Column(name = "E_mail_ID")
+	String email_id;
+	
 	@Column(name = "NAME_OF_THE_BRANCH")
 	String branch;
 	
@@ -40,6 +43,14 @@ public class StudentDetails
 	@OneToOne
 	@PrimaryKeyJoinColumn
 	StudentPersonalInfo studentPersonalInfo;
+
+	public String getEmail_id() {
+		return email_id;
+	}
+
+	public void setEmail_id(String email_id) {
+		this.email_id = email_id;
+	}
 
 	public long getStudentRegNo() {
 		return studentRegNo;
