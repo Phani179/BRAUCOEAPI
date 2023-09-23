@@ -43,6 +43,18 @@ public class StudentDetails
 	@OneToOne
 	@PrimaryKeyJoinColumn
 	StudentPersonalInfo studentPersonalInfo;
+	
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	StudentQualifications studentQualifications;
+
+	public StudentQualifications getStudentQualifications() {
+		return studentQualifications;
+	}
+
+	public void setStudentQualifications(StudentQualifications studentQualifications) {
+		this.studentQualifications = studentQualifications;
+	}
 
 	public String getEmail_id() {
 		return email_id;
