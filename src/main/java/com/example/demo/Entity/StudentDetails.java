@@ -17,7 +17,7 @@ public class StudentDetails
 {
 	@Id
 	@Column(name = "STUDENT_REGISTRATION_NO")
-	long studentRegNo;
+	Long studentRegNo;
 	
 	@Column(name = "STUDENT_NAME")
 	String student_name;

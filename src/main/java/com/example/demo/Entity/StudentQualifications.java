@@ -18,68 +18,68 @@ public class StudentQualifications
 	
 	@Id
 	@Column(name = "Student_Registration_No")
-	private long studentRegNo;
+	private Long studentRegNo;
 	
 	@Column(name = "ADMISSION_NO")
-	private long admissionNo;
+	private Long admissionNo;
 	
 	@Column(name = "SSC_HALL_TICKET_NO")
-	private long sscHallTicketNo;
+	private Long sscHallTicketNo;
 	
 	@Column(name = "INTERMEDIATE_HALL_TICKET_NO")
-	private long interHallTicketNo;
+	private String interHallTicketNo;
 	
 	@Column(name = "EAMCET_Hall_Ticket_No")
-	private long eamcetHallTicketNo;
+	private Long eamcetHallTicketNo;
 	
 	@Column(name = "EAMCET_Rank")
-	private long eamcetRank;
+	private Long eamcetRank;
 
-	public long getStudentRegNo() {
+	public Long getStudentRegNo() {
 		return studentRegNo;
 	}
 
-	public void setStudentRegNo(long studentRegNo) {
+	public void setStudentRegNo(Long studentRegNo) {
 		this.studentRegNo = studentRegNo;
 	}
 
-	public long getAdmissionNo() {
+	public Long getAdmissionNo() {
 		return admissionNo;
 	}
 
-	public void setAdmissionNo(long admissionNo) {
+	public void setAdmissionNo(Long admissionNo) {
 		this.admissionNo = admissionNo;
 	}
 
-	public long getSscHallTicketNo() {
+	public Long getSscHallTicketNo() {
 		return sscHallTicketNo;
 	}
 
-	public void setSscHallTicketNo(long sscHallTicketNo) {
+	public void setSscHallTicketNo(Long sscHallTicketNo) {
 		this.sscHallTicketNo = sscHallTicketNo;
 	}
 
-	public long getInterHallTicketNo() {
+	public String getInterHallTicketNo() {
 		return interHallTicketNo;
 	}
 
-	public void setInterHallTicketNo(long interHallTicketNo) {
+	public void setInterHallTicketNo(String interHallTicketNo) {
 		this.interHallTicketNo = interHallTicketNo;
 	}
 
-	public long getEamcetHallTicketNo() {
+	public Long getEamcetHallTicketNo() {
 		return eamcetHallTicketNo;
 	}
 
-	public void setEamcetHallTicketNo(long eamcetHallTicketNo) {
+	public void setEamcetHallTicketNo(Long eamcetHallTicketNo) {
 		this.eamcetHallTicketNo = eamcetHallTicketNo;
 	}
 
-	public long getEamcetRank() {
+	public Long getEamcetRank() {
 		return eamcetRank;
 	}
 
-	public void setEamcetRank(long eamcetRank) {
+	public void setEamcetRank(Long eamcetRank) {
 		this.eamcetRank = eamcetRank;
 	}
 	

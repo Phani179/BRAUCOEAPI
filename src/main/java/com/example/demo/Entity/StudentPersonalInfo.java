@@ -17,7 +17,7 @@ public class StudentPersonalInfo
 {
 	@Id
 	@Column(name = "Student_Registration_No")
-	private long studentRegNo;
+	private Long studentRegNo;
 	
 	@Column(name = "Date_Of_Birth")
 	private String dateOfBirth;
@@ -42,11 +42,11 @@ public class StudentPersonalInfo
 	private String password;
 	
 
-	public long getStudentRegNo() {
+	public Long getStudentRegNo() {
 		return studentRegNo;
 	}
 
-	public void setStudentRegNo(long studentRegNo) {
+	public void setStudentRegNo(Long studentRegNo) {
 		this.studentRegNo = studentRegNo;
 	}
 
