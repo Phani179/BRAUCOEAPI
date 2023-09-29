@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +63,7 @@ public class Controller
 	UploadImageService imageService;
 	
 	@PostMapping("/updateProfileDp/{studentId}")
-	public String uploadImage(@RequestParam("image") MultipartFile multipartFile, @PathVariable Long studentId)
+	public String uploadImage(@RequestParam("image") MultipartFile multipartFile, @PathVariable Long studentId) throws IOException
 	{
 		return imageService.uploadImage(multipartFile, studentId);
 	}
