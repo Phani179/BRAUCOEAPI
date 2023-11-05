@@ -35,7 +35,7 @@ public class StudentPersonalInfo
 	private String permanentAddress;
 	
 	@Lob
-	@Column(name = "Passport_Size_Photo")
+	@Column(name = "profile_photo_image")
 	private byte[] passportSizePhoto;
 	
 	@Column(name = "password")

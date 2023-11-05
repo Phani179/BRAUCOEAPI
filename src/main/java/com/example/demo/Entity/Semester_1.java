@@ -16,7 +16,7 @@ import lombok.ToString;
 public class Semester_1 
 {
 	@Id
-	@Column(name = "Registration_no")
+	@Column(name = "registration_no")
 	private long student_id;
 	
     private float sgpa;

@@ -38,7 +38,6 @@ public class UploadImageService
 				personalInfoRepo.save(personalInfo);
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			return "Failed";
 		}
 		return "Success";
