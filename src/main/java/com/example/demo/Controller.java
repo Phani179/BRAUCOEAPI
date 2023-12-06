@@ -132,7 +132,7 @@ public class Controller
 		return null;
 	}
 	
-	@Autowired(required = true)
+	@Autowired
 	FeeDeatilsService feeDeatilsService;
 	
 	@GetMapping("/fee-details/{reg_no}")
