@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.example.demo.Entity.Fees;
 import com.example.demo.Entity.NewPassword;
 import com.example.demo.Entity.Semester_1;
 import com.example.demo.Entity.Semester_2;
@@ -22,6 +24,7 @@ import com.example.demo.Entity.StudentDetails;
 import com.example.demo.Service.OTPService;
 import com.example.demo.Service.ResultsService;
 import com.example.demo.Service.EmailService;
+import com.example.demo.Service.FeeDeatilsService;
 import com.example.demo.Service.StudentDetailsService;
 import com.example.demo.Service.UpdatePasswordService;
 import com.example.demo.Service.UploadImageService;
@@ -127,5 +130,14 @@ public class Controller
 	public String getSem8Results(@PathVariable Long reg_no)
 	{
 		return null;
+	}
+	
+	@Autowired(required = true)
+	FeeDeatilsService feeDeatilsService;
+	
+	@GetMapping("/fee-details/{reg_no}")
+	public Fees getFeeResults(@PathVariable Long reg_no)
+	{
+			return feeDeatilsService.getStudentFeesDetails(reg_no);
 	}
 }
