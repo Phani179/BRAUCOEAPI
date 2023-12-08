@@ -20,6 +20,7 @@ import com.example.demo.Entity.Semester_2;
 import com.example.demo.Entity.Semester_3;
 import com.example.demo.Entity.Semester_4;
 import com.example.demo.Entity.Semester_5;
+import com.example.demo.Entity.Semester_6;
 import com.example.demo.Entity.StudentDetails;
 import com.example.demo.Service.OTPService;
 import com.example.demo.Service.ResultsService;
@@ -115,9 +116,9 @@ public class Controller
 	}
 	
 	@GetMapping("/result/Semester - 6/{reg_no}")
-	public String getSem6Results(@PathVariable Long reg_no)
+	public Semester_6 getSem6Results(@PathVariable Long reg_no)
 	{
-		return null;
+		return resultsService.getSem6Result(reg_no);
 	}
 	
 	@GetMapping("/result/Semester - 7/{reg_no}")

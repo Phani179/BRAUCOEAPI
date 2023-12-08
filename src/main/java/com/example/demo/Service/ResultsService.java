@@ -8,11 +8,13 @@ import com.example.demo.Entity.Semester_2;
 import com.example.demo.Entity.Semester_3;
 import com.example.demo.Entity.Semester_4;
 import com.example.demo.Entity.Semester_5;
+import com.example.demo.Entity.Semester_6;
 import com.example.demo.Repo.Sem1ResultsRepo;
 import com.example.demo.Repo.Sem2ResultsRepo;
 import com.example.demo.Repo.Sem3ResultsRepo;
 import com.example.demo.Repo.Sem4ResultsRepo;
 import com.example.demo.Repo.Sem5ResultsRepo;
+import com.example.demo.Repo.Sem6ResultsRepo;
 
 @Service
 public class ResultsService 
@@ -60,5 +62,14 @@ public class ResultsService
 	{
 		Semester_5 sem5Results = sem5ResultsRepo.findById(reg_no).get();
 		return sem5Results;
+	}
+	
+	@Autowired
+	Sem6ResultsRepo sem6ResultsRepo;
+	
+	public Semester_6 getSem6Result(Long reg_no)
+	{
+		Semester_6 sem6Results = sem6ResultsRepo.findById(reg_no).get();
+		return sem6Results;
 	}
 }
