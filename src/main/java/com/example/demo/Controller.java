@@ -93,49 +93,49 @@ public class Controller
 	@Autowired
 	ResultsService resultsService;
 	
-	@GetMapping("/result/Semester - 1/{reg_no}")
+	@GetMapping("/result/semester_1/{reg_no}")
 	public Semester_1 getSem1Results(@PathVariable Long reg_no)
 	{
 		return resultsService.getSem1Result(reg_no);
 	}
 	
-	@GetMapping("/result/Semester - 2/{reg_no}")
+	@GetMapping("/result/semester_2/{reg_no}")
 	public Semester_2 getSem2Results(@PathVariable Long reg_no)
 	{
 		return resultsService.getSem2Result(reg_no);
 	}
 	
-	@GetMapping("/result/Semester - 3/{reg_no}")
+	@GetMapping("/result/semester_3/{reg_no}")
 	public Semester_3 getSem3Results(@PathVariable Long reg_no)
 	{
 		return resultsService.getSem3Result(reg_no);
 	}
 	
-	@GetMapping("/result/Semester - 4/{reg_no}")
+	@GetMapping("/result/semester_4/{reg_no}")
 	public Semester_4 getSem4Results(@PathVariable Long reg_no)
 	{
 		return resultsService.getSem4Result(reg_no);
 	}
 	
-	@GetMapping("/result/Semester - 5/{reg_no}")
+	@GetMapping("/result/semester_5/{reg_no}")
 	public Semester_5 getSem5Results(@PathVariable Long reg_no)
 	{
 		return resultsService.getSem5Result(reg_no);
 	}
 	
-	@GetMapping("/result/Semester - 6/{reg_no}")
+	@GetMapping("/result/semester_6/{reg_no}")
 	public Semester_6 getSem6Results(@PathVariable Long reg_no)
 	{
 		return resultsService.getSem6Result(reg_no);
 	}
 	
-	@GetMapping("/result/Semester - 7/{reg_no}")
+	@GetMapping("/result/semester_7/{reg_no}")
 	public String getSem7Results(@PathVariable Long reg_no)
 	{
 		return null;
 	}
 	
-	@GetMapping("/result/Semester - 8/{reg_no}")
+	@GetMapping("/result/semester_8/{reg_no}")
 	public String getSem8Results(@PathVariable Long reg_no)
 	{
 		return null;
