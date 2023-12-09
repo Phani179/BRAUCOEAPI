@@ -30,6 +30,8 @@ import com.example.demo.Service.StudentDetailsService;
 import com.example.demo.Service.UpdatePasswordService;
 import com.example.demo.Service.UploadImageService;
 import com.example.demo.dto.Email;
+import com.example.demo.dto.Students;
+//import com.example.demo.dto.Students;
 
 @RestController
 public class Controller
@@ -43,7 +45,7 @@ public class Controller
 		return genarateOtp.generateOTP("+91"+mobileNumber);
 	}
 	
-	@Autowired
+	@Autowired(required = true)
 	StudentDetailsService studentDetailsService;
 	
 	@GetMapping("/student/{student_id}")
@@ -51,6 +53,12 @@ public class Controller
 	{
 		System.out.println(studentDetailsService.getStudent(student_id).get(0).get());
 		return studentDetailsService.getStudent(student_id);
+	}
+	
+	@GetMapping("/getAllStudents")
+	public List<Students> getAllStudents()
+	{
+		return studentDetailsService.getAllStudents();
 	}
 	
 	@Autowired
