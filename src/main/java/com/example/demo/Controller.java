@@ -67,7 +67,6 @@ public class Controller
 	@PutMapping("/updatePassword/{studentId}")
 	public boolean updatePassword(@PathVariable long studentId,@RequestBody NewPassword newPassword)
 	{
-		System.out.println(studentId);
 		return updatePasswordObj.updatePassword(studentId, newPassword.getNewPassword());
 	}
 	
